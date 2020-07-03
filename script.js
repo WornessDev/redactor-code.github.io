@@ -1,8 +1,21 @@
-var code = document.getElementById("code");
-	var run = document.getElementById("run");
-	var play = document.getElementById("play");
-	var coding = code.value;
-	function runing () {
-		coding = code.value;
-		document.getElementById('play').innerHTML = coding;
-	}
+var url = "http://mysite.local";  //Адрес Вашего сайта
+var title = "MySite";  //Название Вашего сайта
+function addFavorite(a) {
+try {
+      window.external.AddFavorite(url, title);
+}
+catch (e) {
+try {
+        window.sidebar.addPanel (title, url, "");
+}
+catch (e) {
+if (typeof(opera)=="object") {
+          a.rel = "sidebar";
+          a.title = title;
+          a.url = url;
+return true;
+}
+}
+}
+return false;
+}
