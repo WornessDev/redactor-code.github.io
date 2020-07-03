@@ -1,0 +1,19 @@
+<div>
+<input type = 'checkbox' id = 'cb1' onchange = 'showOrHide("cb1", "cat1");'/>Показать содержимое категории 1
+<br />
+<div id = 'cat1' style = 'display: none;'>Содержимое категории 1</div>
+<input type = 'checkbox' id = 'cb2' onchange = 'showOrHide("cb2", "cat2");' />Показать содержимое категории 2
+<br />
+<div id = 'cat2' style = 'display: none;'>Содержимое категории 2</div>
+<input type = 'checkbox' id = 'cb3' onchange = 'showOrHide("cb3", "cat3");' />Показать содержимое категории 3
+<br />
+<div id = 'cat3' style = 'display: none;'>Содержимое категории 3</div>
+</div>
+<script type="text/javascript">
+function showOrHide(cb, cat) {
+    cb = document.getElementById(cb);
+    cat = document.getElementById(cat);
+if (cb.checked) cat.style.display = "block";
+else cat.style.display = "none";
+}
+</script>
